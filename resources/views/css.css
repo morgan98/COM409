@@ -1,0 +1,308 @@
+/* This Stylesheet contains all the stlying properties for the Website, Please ensure that the CSS is linked to every HTML File used in the project. */
+
+
+/* BASIC WEPAGE STYLINGS - The Stylings used to create the basic look of a webpage for the project*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+/* HEADER */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+
+.header h1 {
+  font-size: 25px;
+}
+
+/*TOP NAVIGATION*/ 
+.topnav {
+  overflow: hidden;
+  background-color: #7e1c1c;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: rgb(8, 8, 8);
+  color: white;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=search] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+/* RESIZING */ 
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+  
+}
+
+/* LEFT COLUMN */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+.leftcolumn h2{
+  text-align: center;
+}
+
+/* RIGHT COLUM */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+
+/* PLACEHOLDER IMAGE FOR HOMEPAGE */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* CARD STYLING */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* FLOAT COLUMNS */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* FOOTER */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #7e1c1c;
+  margin-top: 20px;
+  color: #ddd
+}
+
+/* RESPONSIVE LAYOUT FOR COLUMNS */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* SOCIAL MEDIA BUTTONS */
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+background: #3B5998;
+color: white;
+padding: 20px;
+font-size: 30px;
+width: 50px;
+text-align: center;
+}
+
+.fa-twitter {
+background: #55ACEE;
+color: white;
+padding: 20px;
+font-size: 30px;
+width: 50px;
+text-align: center;
+}
+
+.fa-instagram {
+background: #125688;
+color: white;
+padding: 20px;
+font-size: 30px;
+width: 50px;
+text-align: center;
+}
+
+
+/* LOGIN PAGE CSS STYLINGS - Stylings Specfic to the Login Page */
+
+/* STYLING FOR THE LOGIN FORM */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/*LOGIN BUTTON STYLING*/
+.loginbtn{
+  background-color: #7e1c1c;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* HOVER EFFECT FOR LOGIN BUTTON */
+.loginbtn:hover {
+  opacity: 0.8;
+}
+
+/* CANCEL BUTTON STYLING */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #000000;
+}
+
+/* CONTAINER PADDING */
+.formcontainer {
+  padding: 16px;
+}
+
+/* FORGOT PASSWORD? LINK */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* CHANGE STYLES DEPENDING ON SCREEN SIZE */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+
+/* PRODUCT PAGE STYLINGS - Stylings specfic to the Product Page */
+
+/*PRODUCT PAGE IMAGE */
+.prodimg {
+  background-color: #aaa;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+  padding: 10px 18px;
+
+}
+
+/* ADD TO CART BUTTON*/
+.addtocart {
+  background-color: #7e1c1c;
+  color: white;
+  display: block;
+  margin: 8px 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* REVIEW BOX CSS */
+.checked {
+  color: orange;
+}
+
+/* COLUMN LAYOUT */
+.side {
+  float: left;
+  width: 15%;
+  margin-top: 10px;
+}
+
+.middle {
+  float: left;
+  width: 70%;
+  margin-top: 10px;
+}
+
+/* TEXT TO THE RIGHT */
+.right {
+  text-align: right;
+}
+
+/* RESPONCEIVE LAYOUT FOR REVIEWS */
+@media (max-width: 400px) {
+  .side, .middle {
+    width: 100%;
+  }
+  /* Hide the right column on small screens */
+  .right {
+    display: none;
+  }
+}
+
+
+
+
+
