@@ -8,7 +8,7 @@
         <title>Movies Mobile</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- Styles -->
@@ -22,9 +22,10 @@
                 <div class="logo">Movies Mobile</div>
                 <ul>
                     <li><a href="#">Shop</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blog</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="#">Premium</a></li>
                     <li><a href="#">Cart</a></li>
+                    <li><a href="login">Login/Register</a></li>
                 </ul>
             </div> <!-- end top-nav -->
 
@@ -109,7 +110,7 @@
 
         <div class="blog-section">
             <div class="container">
-                <h1 class="text-center">From Our Blog</h1>
+                <h1 class="text-center">Members get more...</h1>
 
                 <p class="section-description text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et sed accusantium maxime dolore cum provident itaque ea, a architecto alias quod reiciendis ex ullam id, soluta deleniti eaque neque perferendis.</p>
 
