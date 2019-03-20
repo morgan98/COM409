@@ -4,7 +4,7 @@ Website Project for Client-Side Application Development
 
 #Database Info
 
-i'm not using docker right now due to multiple issues, but you should be still be able to access the info on the database. I'm using PHPmyadmin to manage the database
+i'm not using docker right now due to multiple issues, but you should still be able to access the info for the database. I'm using PHPmyadmin to manage the database
 
 STEPS
 
