@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
@@ -58,46 +59,15 @@
 
 
                 <div class="products text-center">
-                    <div class="product">
+                
+                @foreach($products as $product)
+                <div class="product">
                         <a href="#"><img src="img/captainmarvel.jpg" alt="product"></a>
-                        <a href="#"><div class="product-name">Captain Marvel</div></a>
-                        <div class="product-price">£9.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="img/captainmarvel.jpg" alt="product"></a>
-                        <a href="#"><div class="product-name">Captain Marvel</div></a>
-                        <div class="product-price">£9.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="img/captainmarvel.jpg" alt="product"></a>
-                        <a href="#"><div class="product-name">Captain Marvel</div></a>
-                        <div class="product-price">£9.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="img/captainmarvel.jpg" alt="product"></a>
-                        <a href="#"><div class="product-name">Captain Marvel</div></a>
-                        <div class="product-price">£9.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="img/captainmarvel.jpg" alt="product"></a>
-                        <a href="#"><div class="product-name">Captain Marvel</div></a>
-                        <div class="product-price">£9.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="img/captainmarvel.jpg" alt="product"></a>
-                        <a href="#"><div class="product-name">Captain Marvel</div></a>
-                        <div class="product-price">£9.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="img/captainmarvel.jpg" alt="product"></a>
-                        <a href="#"><div class="product-name">Captain Marvel</div></a>
-                        <div class="product-price">£9.99</div>
-                    </div>
-                    <div class="product">
-                        <a href="#"><img src="img/captainmarvel.jpg" alt="product"></a>
-                        <a href="#"><div class="product-name">Captain Marvel</div></a>
-                        <div class="product-price">£9.99</div>
-                    </div>
+                        <a href="#"><div class="product-name">{{$product->name}}</div></a>
+                        <div class="product-price">£{{$product->price}}</div>
+                        </div> <!-- end products -->
+                @endforeach
+           
                 </div> <!-- end products -->
 
                 <div class="text-center button-container">

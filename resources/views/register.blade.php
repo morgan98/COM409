@@ -35,7 +35,7 @@
         <div class="container">
     <h1>Register</h1>
     <hr>
-
+    
     <label for="forename"><b>Forename</b></label>
     <input type="text" placeholder="Enter Forename" name="forename" required>
 

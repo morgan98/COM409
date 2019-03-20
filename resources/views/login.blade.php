@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
         <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 
+        
+
     </head>
     <body>
         <header>
@@ -31,10 +33,13 @@
                 </ul>
             </div> <!-- end top-nav -->
         </header>
+        
+        <h1> Login </h1>
 
-        <div class="login container">
+        <div class="container">
 
-        <label for="username"><b>Username</b></label>
+        <label for="username"><b>Username</b>
+    </label>
         <input type="text" placeholder="Enter Username" name="uname" required>
 
         <label for="psw"><b>Password</b></label>
@@ -46,9 +51,10 @@
         <input type="checkbox" checked="checked" name="remember"> Remember me
         </label>
 
+        
         </div> <!--END OF login container-->
 
-        <div class="register" style="background-color:#f1f1f1">
+        <div class="register" style="background-color:#f5f12e">
         <span class="reg">Don't have an Account?, <a href="register">Register Here!</a></span>
         </div>
 
