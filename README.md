@@ -1,6 +1,10 @@
 # COM409
 Website Project for Client-Side Application Development 
 
+**WARNING********************************************************************
+Make sure you have the database running before you try to enter the site!!!!
+****************************************************************************
+
 
 #Database Info
 
