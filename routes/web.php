@@ -11,10 +11,13 @@
 |
 */
 
+use App\Product;
+
 Route::get('/', 'WelcomePageController@index')->name('Home Page');
 
 Route::get('welcome', function () {
-    return view('welcome');
+    $products = Product::inRandomOrder()->take(8)->get();
+    return view('welcome')->with('products', $products);
 });
 
 Route::get('about', function () {

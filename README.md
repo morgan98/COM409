@@ -15,7 +15,7 @@ STEPS
 2. ensure their is an account called admin, hostname localhost with the password admin, make one if needs be.
 3. Go to the .env file in the project folder. Ensure that the database name is com409 and the username and password are both admin
 4. Open Command Line/powershell and cd into the project's directory
-5. Type 'php artisan migrate'. This should hopefully create the tables present in the project in the phpmyadmin database. If not, create an empty database within phpmyadmin named com409 and try again.
+5. Type 'php artisan migrate'. This should hopefully create the tables present in the project in the phpmyadmin database. 
 6. Type 'php artisan db:seed', which should populate the products table with entries.
 
 
