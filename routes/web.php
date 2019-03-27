@@ -11,11 +11,10 @@
 |
 */
 
-Route::get('/', 'WelcomePageController@index')->name('Home Page');
+Route::get('/', 'WelcomePageController@index')->name('landing');
+Route::get('welcome', 'WelcomePageController@index')->name('Home');
 
-Route::get('welcome', function () {
-    return view('welcome');
-});
+
 
 Route::get('about', function () {
     return view('about');
@@ -34,6 +33,16 @@ Route::get('product', function () {
     return view('product');
 });
 
-Route::get('shop', 'ShopController@index')->name('Store');
+Route::get('cart', function () {
+    return view('cart');
+});
 
-//Route::get('shop/{product}', 'ShopController@show')->name('Store.show');
+Route::get('checkout', function () {
+    return view('checkout');
+});
+
+
+
+Route::get('shop', 'ShopController@index')->name('Store.index');
+
+Route::get('shop/{product}', 'ShopController@show')->name('Store.show');

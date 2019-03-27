@@ -23,7 +23,7 @@
                 <div class="logo">Movies Mobile</div>
                 <ul>
                 <li><a href="welcome">home</a></li>
-                    <li><a href="shop">Shop</a></li>
+                    <li><a href="{{route('Store.index')}}">Shop</a></li>
                     <li><a href="about">About</a></li>
                     <li><a href="#">Premium</a></li>
                     <li><a href="#">Cart</a></li>
@@ -64,7 +64,7 @@
                 
                 @foreach($products as $product)
                 <div class="product">
-                        <a href="#"><img src="img/captainmarvel.jpg" alt="product"></a>
+                <a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('img/products/' .$product->slug. '.jpg') }}" style="height:300px"  alt="product"></a>
                         <a href="#"><div class="product-name">{{$product->name}}</div></a>
                         <div class="product-price">£{{$product->price}}</div>
                         </div> <!-- end products -->
@@ -73,7 +73,7 @@
                 </div> <!-- end products -->
 
                 <div class="text-center button-container">
-                    <a href="#" class="button">View more products</a>
+                    <a href="shop" class="button">View more products</a>
                 </div>
 
             </div> <!-- end container -->

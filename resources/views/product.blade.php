@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Movies Mobile</title>
+        <title>Movies Mobile - {{$product->name}}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -24,7 +24,7 @@
                 <div class="logo">Movies Mobile</div>
                 <ul>
                    <li><a href="welcome">home</a></li>
-                    <li><a href="shop">Shop</a></li>
+                    <li><a href="{{route('Store.index')}}">Shop</a></li>
                     <li><a href="about">About</a></li>
                     <li><a href="#">Premium</a></li>
                     <li><a href="#">Cart</a></li>
@@ -33,20 +33,36 @@
             </div> <!-- end top-nav -->
             </header>
 
-              <div class="card">
-              <img src="img/captainmarvel.jpg" alt="Captain Maravel[2019]" style="width:100%">
-              <h1>Captain Marvel</h1>
-              <p class="price">$19.99</p>
-              <p></p>
-              <p><button>Add to Cart</button></p>
-              </div>
-              <div class="card2">
-              <img src="img/captainmarvel.jpg" alt="Captain Maravel[2019]" style="width:100%">
-              <h1>Captain Marvel</h1>
-              <p class="price">$19.99</p>
-              <p></p>
-              <p><button>Add to Cart</button></p>
-              </div>
+           
+              <!--LEFT COLUMN-->
+      <div class="row">
+      <div class="leftcolumn">
+      <div class="card">
+      <div class="img"><img src="{{ asset('img/products/' .$product->slug. '.jpg') }}"style="height:400px" alt="product"></div>
+          <div class="price">£{{$product->price}}</div>
+          <button type="button" class="addtocart">Add to Cart</button>
+         </div><!-- END imageCard -->
+
+      
+        </div>
+        
+
+    <!--RIGHT COLUMN-->
+    <div class="rightcolumn">
+        <div class="card">
+        <H5> {{$product->name}}</H5>
+
+        <p> {{$product->description}}. </p>    
+        
+        
+        </div>
+        </div>
+   
+</div>
+          
+          
+    
+              
 
             <footer>
             <div class="footer-content container">

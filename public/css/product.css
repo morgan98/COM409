@@ -1,39 +1,123 @@
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: left;
-    text-align: center;
-    font-family: arial;
-    padding: 40px ;
+/* PRODUCT PAGE STYLINGS - Stylings specfic to the Product Page */
+
+
+body {
+    font-family: Arial;
+    padding: 10px;
+    background: #f1f1f1;
   }
 
-  .card2 {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: left;
-    text-align: centre;
-    font-family: arial;
-    padding: 40px ;
-  }
 
+
+/*PRODUCT PAGE IMAGE */
+.prodimg {
+    background-color: #aaa;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+    padding: 10px 18px;
   
-  .price {
-    color: grey;
-    font-size: 22px;
   }
   
-  .card button {
-    border: none;
-    outline: 0;
-    padding: 12px;
+  /* ADD TO CART BUTTON*/
+  .addtocart {
+    background-color: #7e1c1c;
     color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 18px;
+    display: block;
+    margin: 8px 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
   }
   
-  .card button:hover {
-    opacity: 0.7;
+  /* REVIEW BOX CSS */
+  .checked {
+    color: orange;
   }
+  
+  /* COLUMN LAYOUT */
+  .side {
+    float: left;
+    width: 15%;
+    margin-top: 10px;
+  }
+  
+  .middle {
+    float: left;
+    width: 70%;
+    margin-top: 10px;
+  }
+  
+  /* TEXT TO THE RIGHT */
+  .right {
+    text-align: right;
+  }
+  
+  /* RESPONCEIVE LAYOUT FOR REVIEWS */
+  @media (max-width: 400px) {
+    .side, .middle {
+      width: 100%;
+    }
+    /* Hide the right column on small screens */
+    .right {
+      display: none;
+    }
+  }
+  
+/* LEFT COLUMN */
+.leftcolumn {   
+    float: left;
+    width: 25%;
+  }
+  
+  .leftcolumn h2{
+    text-align: center;
+  }
+
+  .price{
+      text-align: center;
+  }
+
+ 
+  
+  
+  /* RIGHT COLUM */
+  .rightcolumn {
+    float: left;
+    width: 75%; 
+    background-color: #f1f1f1;
+    padding-left: 20px;
+  }
+
+  .rightcolumn h5{
+      text-align: center;
+  }
+
+  /* CARD STYLING */
+  .card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  /* FLOAT COLUMNS */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+ 
+  
+  /* RESPONSIVE LAYOUT FOR COLUMNS */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+  }  
+
+  

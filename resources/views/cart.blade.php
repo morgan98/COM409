@@ -22,7 +22,7 @@
             <div class="top-nav container">
                 <div class="logo">Movies Mobile</div>
                 <ul>
-                   <li><a href="{{route('Home')}}">home</a></li>
+                <li><a href="welcome">home</a></li>
                     <li><a href="{{route('Store.index')}}">Shop</a></li>
                     <li><a href="about">About</a></li>
                     <li><a href="#">Premium</a></li>
@@ -30,23 +30,24 @@
                     <li><a href="login">Login/Register</a></li>
                 </ul>
             </div> <!-- end top-nav -->
-            </header>
+</header>
             
-            <div class="featured-section">
-            <div class="products text-center">
-                
-                @foreach($products as $product)
-                <div class="product">
-                        <a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('img/products/' .$product->slug. '.jpg') }}" style="height:400px"  alt="product"></a>
-                        <a href="#"><div class="product-name">{{$product->name}}</div></a>
-                        <div class="product-price">£{{$product->price}}</div>
-                        </div> <!-- end products -->
-                @endforeach
-           
-                </div> <!-- end products -->
-        
 
+             <!--LEFT COLUMN-->
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="card">
+          <h5>Cart </h5>
+          <div class="product">
+              
+            <a href="#"><div class="product-name">captain marvel</div></a>div class="product-price">£8</div>
+            <button type="button" class="addtocart">Checkout</button>
+            </div> <!-- end products -->
 
+        </div>
+       </div>
+</div>
+            
             <footer>
             <div class="footer-content container">
                
