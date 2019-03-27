@@ -14,15 +14,14 @@ class CreateMovieGenreTable extends Migration
     public function up()
     {
         Schema::create('movie_genre', function (Blueprint $table) {
-            $table->integer('productID');
-            $table->integer('GenreID');
+            $table->unsignedinteger('productID');
+            $table->unsignedinteger('GenreID');
             $table->timestamps();
         });
         Schema::table('movie_genre',function ($table) {
             $table->primary(['productID','GenreID']);
             $table->foreign('GenreID')->references('GenreID')->on('genre');
             $table->foreign('productID')->references('productID')->on('products');
-            
         });
     }
 

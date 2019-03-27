@@ -14,8 +14,8 @@ class CreateRatingTable extends Migration
     public function up()
     {
         Schema::create('rating', function (Blueprint $table) {
-            $table->integer('productID');
-            $table->integer('CustomerID');
+            $table->unsignedinteger('productID');
+            $table->unsignedinteger('CustomerID');
             $table->tinyinteger('Rating');
             $table->text('Review')->nullable();
             $table->timestamps();

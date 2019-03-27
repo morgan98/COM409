@@ -14,8 +14,8 @@ class CreateMovieOrderTable extends Migration
     public function up()
     {
         Schema::create('movie_order', function (Blueprint $table) {
-            $table->integer('OrderID');
-            $table->integer('CustomerID');
+            $table->unsignedinteger('OrderID');
+            $table->unsignedinteger('CustomerID');
             $table->timestamps();
         });
         Schema::table('movie_order', function($table) {                
