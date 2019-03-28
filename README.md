@@ -21,6 +21,7 @@ STEPS
 7. If you encounter an error such as 'Class UserTableSeeder does not exist' then you should run 'composer dumpautoload' in Command Line in order to remap all available classes.
 
 #Admin Area 
+
 The admin area has been created using the libary [Laravel Voyager](https://laravelvoyager.com/).
 If you have trouble installing it please refer to the documentation on the site.
 In order to access the admin area simply type: localhost/admin.
