@@ -12,11 +12,15 @@ i'm not using docker right now due to multiple issues, but you should still be a
 STEPS
 
 1. Open PHPmyadmin and create a database called 'com409'
-2. ensure their is an account called admin, hostname localhost with the password admin, make one if needs be.
+2. Ensure there is an account called admin, hostname localhost with the password admin, make one if needs be.
 3. Go to the .env file in the project folder. Ensure that the database name is com409 and the username and password are both admin
 4. Open Command Line/powershell and cd into the project's directory
 5. Type 'php artisan migrate'. This should hopefully create the tables present in the project in the phpmyadmin database. If you have previously added tables type 'php artisan migrate:fresh' in order to update tables
 6. Type 'php artisan db:seed', which should populate the products table with entries.
+	Alternatively, step 5 and 6 can be done by typing 'php artisan migrate:fresh --seed'
+7. If you encounter an error such as 'Class UserTableSeeder does not exist' then you should run 'composer dumpautoload' in Command Line in order to remap all available classes.
 
+NOTES
 
+1. Default user is email: admin@ulster.ac.uk   password: admin
 

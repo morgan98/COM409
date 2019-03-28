@@ -14,15 +14,12 @@ class CreateOrderTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->unsignedinteger('OrderID');
+            $table->increments('OrderID');
             $table->unsignedinteger('CustomerID');
             $table->timestamps();
         });
         Schema::table('orders', function ($table) {
-            $table->primary(['OrderID', 'CustomerID']);
-            $table  ->foreign('CustomerID')
-                    ->references('CustomerID')
-                    ->on('users');
+            $table->foreign('CustomerID')->references('CustomerID')->on('users');
         });
     }
 

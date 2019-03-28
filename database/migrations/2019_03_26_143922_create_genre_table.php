@@ -13,7 +13,7 @@ class CreateGenreTable extends Migration
      */
     public function up()
     {
-        Schema::create('genre', function (Blueprint $table) {
+        Schema::create('genres', function (Blueprint $table) {
             $table->increments('GenreID')->unique();
             $table->string('GenreSlug')->unique();
             $table->string('GenreName');

@@ -13,14 +13,14 @@ class CreateRatingTable extends Migration
      */
     public function up()
     {
-        Schema::create('rating', function (Blueprint $table) {
+        Schema::create('ratings', function (Blueprint $table) {
             $table->unsignedinteger('productID');
             $table->unsignedinteger('CustomerID');
             $table->tinyinteger('Rating');
             $table->text('Review')->nullable();
             $table->timestamps();
         });
-        Schema::table('rating',function ($table) {
+        Schema::table('ratings',function ($table) {
             $table->primary(['productID','CustomerID']);
             $table->foreign('productID')->references('productID')->on('products');
             $table->foreign('CustomerID')->references('CustomerID')->on('users');
@@ -35,6 +35,6 @@ class CreateRatingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rating');
+        Schema::dropIfExists('ratings');
     }
 }

@@ -13,15 +13,15 @@ class CreateMovieOrderTable extends Migration
      */
     public function up()
     {
-        Schema::create('movie_order', function (Blueprint $table) {
+        Schema::create('movie_orders', function (Blueprint $table) {
             $table->unsignedinteger('OrderID');
-            $table->unsignedinteger('CustomerID');
+            $table->unsignedinteger('productID');
             $table->timestamps();
         });
-        Schema::table('movie_order', function($table) {                
-            $table->primary(['OrderID','CustomerID']);
+        Schema::table('movie_orders', function($table) {      
+            $table->unique(array('OrderID','productID'));
             $table->foreign('OrderID')->references('OrderID')->on('orders');             
-            $table->foreign('CustomerID')->references('CustomerID')->on('users');
+            $table->foreign('productID')->references('productID')->on('products');
         });
     }
 
@@ -32,6 +32,6 @@ class CreateMovieOrderTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('movie_order');
+        Schema::dropIfExists('movie_orders');
     }
 }

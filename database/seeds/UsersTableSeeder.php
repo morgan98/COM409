@@ -14,10 +14,10 @@ class UsersTableSeeder extends Seeder
     {
         factory(App\User::class, 50)->create();
         User::create([
-            'FirstName' => 'Group8',
+            'FirstName' => 'admin',
             'LastName' => 'COM409',
-            'email' => 'group8@ulster.ac.uk',
-            'password' => 'com409',
+            'email' => 'admin@example.net',
+            'password' => 'admin',
         ]);
     }
 }
