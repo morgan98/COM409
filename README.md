@@ -23,11 +23,15 @@ STEPS
 #Admin Area 
 
 The admin area has been created using the libary [Laravel Voyager](https://laravelvoyager.com/).
+
 If you have trouble installing it please refer to the documentation on the site.
+
 In order to access the admin area simply type: localhost/admin.
 
 The admin login is:
+
 username: admin@admin.com
+
 password: password 
 
 NOTES
