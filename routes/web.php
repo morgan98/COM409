@@ -46,3 +46,7 @@ Route::get('checkout', function () {
 Route::get('shop', 'ShopController@index')->name('Store.index');
 
 Route::get('shop/{product}', 'ShopController@show')->name('Store.show');
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

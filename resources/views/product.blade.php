@@ -52,7 +52,7 @@
         <div class="card">
         <H5> {{$product->name}}</H5>
 
-        <p> {{$product->description}}. </p>    
+        <p> {!! $product->description !!}. </p>    
         
         
         </div>
