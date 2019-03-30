@@ -14,12 +14,13 @@ class CreateMovieOrderTable extends Migration
     public function up()
     {
         Schema::create('movie_orders', function (Blueprint $table) {
+            $table->increments('MovieOrderID');
             $table->unsignedinteger('OrderID');
             $table->unsignedinteger('productID');
             $table->timestamps();
         });
         Schema::table('movie_orders', function($table) {      
-            $table->unique(array('OrderID','productID'));
+            $table->unique(array('MovieOrderID','OrderID','productID'));
             $table->foreign('OrderID')->references('OrderID')->on('orders');             
             $table->foreign('productID')->references('productID')->on('products');
         });

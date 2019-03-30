@@ -20,6 +20,7 @@ class CreateMovieGenresTable extends Migration
             $table->timestamps();
         });
         Schema::table('movie_genres',function ($table) {
+            $table->unique(array('id','productID','GenreID'));
             $table->foreign('GenreID')->references('GenreID')->on('genres');
             $table->foreign('productID')->references('productID')->on('products');
         });
