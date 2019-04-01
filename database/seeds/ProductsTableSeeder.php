@@ -2,6 +2,9 @@
 
 
 use App\Product;
+use App\Genre;
+use App\MovieGenre;
+
 use Illuminate\Database\Seeder;
 
 class ProductsTableSeeder extends Seeder
@@ -92,5 +95,24 @@ class ProductsTableSeeder extends Seeder
             'price' => 299,
             'description' => 'TBA',
         ]);
+                
+        foreach(App\Product::all()as $product)
+            {            
+            $genre = App\Genre::inRandomOrder()->first()->GenreID;
+            $numEntries = rand(0,1);
+            for($i = 0; $i < $numEntries; $i++)
+            {
+                $genre2 = App\Genre::inRandomOrder()->first()->GenreID;
+                while($genre2 == $genre)
+                    {                    
+                    $genre2 = App\Genre::inRandomOrder()->first()->GenreID;
+                    }
+                    MovieGenre::create([
+                        'productID' => $product->productID ,
+                        'GenreID' =>  $genre2
+                            ]);
+                    $genre = $genre2;
+            }
+        }
     }
 }

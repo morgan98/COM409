@@ -20,7 +20,7 @@ class CreateMovieOrderTable extends Migration
             $table->timestamps();
         });
         Schema::table('movie_orders', function($table) {      
-            $table->unique(array('MovieOrderID','OrderID','productID'));
+            $table->unique(array('OrderID','productID'));
             $table->foreign('OrderID')->references('OrderID')->on('orders');             
             $table->foreign('productID')->references('productID')->on('products');
         });

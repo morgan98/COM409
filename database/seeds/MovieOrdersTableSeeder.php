@@ -10,7 +10,6 @@ class MovieOrdersTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        factory(App\MovieOrder::class, 20)->create();        
+    {    
     }
 }
