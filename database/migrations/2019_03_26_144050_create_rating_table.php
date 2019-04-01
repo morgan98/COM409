@@ -21,10 +21,9 @@ class CreateRatingTable extends Migration
             $table->timestamps();
         });
         Schema::table('ratings',function ($table) {
-            $table->primary(['productID','CustomerID']);
+            $table->unique(array('productID','CustomerID'));
             $table->foreign('productID')->references('productID')->on('products');
             $table->foreign('CustomerID')->references('CustomerID')->on('users');
-            
         });
     }
 
