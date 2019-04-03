@@ -14,9 +14,7 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-
-        
+        <link rel="stylesheet" href="{{ asset('css/logintemp.css') }}">
 
     </head>
     <body>
@@ -33,30 +31,42 @@
                 </ul>
             </div> <!-- end top-nav -->
         </header>
-        
-        <h1> Login </h1>
 
         <div class="container">
+    <h1>Register</h1>
+    <hr>
+    
+    <label for="forename"><b>Forename</b></label>
+    <input type="text" placeholder="Enter Forename" name="forename" required>
 
-        <label for="username"><b>Username</b>
+    <label for="surname"><b>Surname</b></label>
+    <input type="text" placeholder="Enter Surname" name="surname" required>
+
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <label for="password2"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+    <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
     </label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+    
+    <div class="clearfix">
 
-        <button type="submit">Login</button>
-        <label>
-
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+  </div>
+</form>
 
         
-        </div> <!--END OF login container-->
 
-        <div class="register" style="background-color:#f5f12e">
-        <span class="reg">Don't have an Account?, <a href="register">Register Here!</a></span>
-        </div>
+        
 
         <footer>
             <div class="footer-content container">

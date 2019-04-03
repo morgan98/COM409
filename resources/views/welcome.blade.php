@@ -22,11 +22,13 @@
             <div class="top-nav container">
                 <div class="logo">Movies Mobile</div>
                 <ul>
-                    <li><a href="#">Shop</a></li>
+                <li><a href="welcome">home</a></li>
+                    <li><a href="{{route('Store.index')}}">Shop</a></li>
                     <li><a href="about">About</a></li>
-                    <li><a href="#">Premium</a></li>
-                    <li><a href="#">Cart</a></li>
-                    <li><a href="login">Login/Register</a></li>
+                    <li><a href="movieclub">Movie Club</a></li>
+                    <li><a href="checkout">Cart</a></li>
+                    <li><a href="login">Account</a></li>
+                </ul>
                 </ul>
             </div> <!-- end top-nav -->
 
@@ -34,10 +36,7 @@
                 <div class="hero-copy">
                     <h1>Welcome...</h1>
                     <p>To Movies Mobile! You one stop shop for the latest Blockbusters and Indie hits, all ready for instant download</p>
-                    <div class="hero-buttons">
-                        <a href="#" class="button button-white">Button 1</a>
-                        <a href="#" class="button button-white">Button 2</a>
-                    </div>
+                    
                 </div> <!-- end hero-copy -->
 
                 <div class="hero-image">
@@ -50,19 +49,14 @@
             <div class="container">
                 <h1 class="text-center">Featured!</h1>
 
-                <p class="section-description text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid earum fugiat debitis nam, illum vero, maiores odio exercitationem quaerat. Impedit iure fugit veritatis cumque quo provident doloremque est itaque.</p>
-
-                <div class="text-center button-container">
-                    <a href="#" class="button">Featured</a>
-                    <a href="#" class="button">On Sale</a>
-                </div>
-
-
                 <div class="products text-center">
                 
                 @foreach($products as $product)
                 <div class="product">
-                        <a href="#"><img src="img/captainmarvel.jpg" alt="product"></a>
+                <a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('storage/' .$product->image) }}" style="height:300px"  alt="product"></a>
+               <!-- Old Method for Calling Image(Kept as fallback) -->
+                <!-- <a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('img/products/' .$product->slug. '.jpg') }}" style="height:300px"  alt="product"></a> -->
+
                         <a href="#"><div class="product-name">{{$product->name}}</div></a>
                         <div class="product-price">£{{$product->price}}</div>
                         </div> <!-- end products -->
@@ -71,7 +65,7 @@
                 </div> <!-- end products -->
 
                 <div class="text-center button-container">
-                    <a href="#" class="button">View more products</a>
+                    <a href="shop" class="button">View more products</a>
                 </div>
 
             </div> <!-- end container -->
