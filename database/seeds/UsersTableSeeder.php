@@ -5,10 +5,14 @@ use Illuminate\Support\Str;
 use TCG\Voyager\Models\Role;
 use TCG\Voyager\Models\User;
 
+use App\User;
+use Illuminate\Database\Seede
+
+
 class UsersTableSeeder extends Seeder
 {
     /**
-     * Auto generated seed file.
+     * Run the database seeds.
      *
      * @return void
      */
@@ -25,5 +29,8 @@ class UsersTableSeeder extends Seeder
                 'role_id'        => $role->id,
             ]);
         }
+      
+        factory(App\User::class, 50)->create();
+
     }
 }

@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Product;
 
 //Welcome Controller for handling the Products grid
 Route::get('/', 'WelcomePageController@index')->name('landing');
@@ -18,6 +19,11 @@ Route::get('welcome', 'WelcomePageController@index')->name('Home');
 //Search Feature Web Route
 Route::get('/search', 'ShopController@search')->name('search');
 
+
+Route::get('welcome', function () {
+    $products = Product::inRandomOrder()->take(8)->get();
+    return view('welcome')->with('products', $products);
+});
 
 //Basic Web Routes
 Route::get('about', function () {

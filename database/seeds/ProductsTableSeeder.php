@@ -2,6 +2,9 @@
 
 
 use App\Product;
+use App\Genre;
+use App\MovieGenre;
+
 use Illuminate\Database\Seeder;
 
 class ProductsTableSeeder extends Seeder
@@ -19,8 +22,6 @@ class ProductsTableSeeder extends Seeder
             'details' => '2019 Film',
             'price' => 14,
             'description' => 'TBA',
-            
-
         ]);
 
         Product::create([
@@ -29,8 +30,6 @@ class ProductsTableSeeder extends Seeder
             'details' => '1967 TV Serial',
             'price' => 14,
             'description' => 'TBA',
-            
-
         ]);
 
         Product::create([
@@ -39,8 +38,6 @@ class ProductsTableSeeder extends Seeder
             'details' => '1980-81 TV Series',
             'price' => 34,
             'description' => 'TBA',
-            
-
         ]);
 
         Product::create([
@@ -49,8 +46,6 @@ class ProductsTableSeeder extends Seeder
             'details' => '2018 TV Series',
             'price' => 34,
             'description' => 'TBA',
-            
-
         ]);
 
         Product::create([
@@ -59,8 +54,6 @@ class ProductsTableSeeder extends Seeder
             'details' => '1984 Film',
             'price' => 6,
             'description' => 'TBA',
-            
-
         ]);
 
         Product::create([
@@ -69,8 +62,6 @@ class ProductsTableSeeder extends Seeder
             'details' => '1979 Film',
             'price' => 3,
             'description' => 'TBA',
-            
-
         ]);
 
         Product::create([
@@ -79,8 +70,6 @@ class ProductsTableSeeder extends Seeder
             'details' => '1986 Film',
             'price' => 3,
             'description' => 'TBA',
-            
-
         ]);
 
         Product::create([
@@ -89,8 +78,6 @@ class ProductsTableSeeder extends Seeder
             'details' => '2018 Film',
             'price' => 14,
             'description' => 'TBA',
-            
-
         ]);
 
         Product::create([
@@ -99,8 +86,6 @@ class ProductsTableSeeder extends Seeder
             'details' => '1986 Film',
             'price' => 18,
             'description' => 'TBA',
-            
-
         ]);
 
         Product::create([
@@ -109,8 +94,25 @@ class ProductsTableSeeder extends Seeder
             'details' => '1996 Film',
             'price' => 2,
             'description' => 'TBA',
-            
-
         ]);
+                
+        foreach(App\Product::all()as $product)
+            {            
+            $genre = App\Genre::inRandomOrder()->first()->GenreID;
+            $numEntries = rand(0,1);
+            for($i = 0; $i < $numEntries; $i++)
+            {
+                $genre2 = App\Genre::inRandomOrder()->first()->GenreID;
+                while($genre2 == $genre)
+                    {                    
+                    $genre2 = App\Genre::inRandomOrder()->first()->GenreID;
+                    }
+                    MovieGenre::create([
+                        'productID' => $product->productID ,
+                        'GenreID' =>  $genre2
+                            ]);
+                    $genre = $genre2;
+            }
+        }
     }
 }
