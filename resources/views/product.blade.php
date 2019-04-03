@@ -26,21 +26,36 @@
                    <li><a href="welcome">home</a></li>
                     <li><a href="{{route('Store.index')}}">Shop</a></li>
                     <li><a href="about">About</a></li>
-                    <li><a href="#">Premium</a></li>
+                    <li><a href="movieclub">Movie Club</a></li>
                     <li><a href="#">Cart</a></li>
-                    <li><a href="login">Login/Register</a></li>
+                    <li><a href="login">Account</a></li>
                 </ul>
             </div> <!-- end top-nav -->
             </header>
+            <div class="top-bar">
+             <form action ="{{ route('search')}}" method="GET" class="search">
+                 <i class="fa fa-search search-icon"></i>
+                 <input type="text" name="query" id="query" class="search-box" placeholder="search for product">
+             </form>  
+            </div> <!-- End Top Bar --> 
 
            
               <!--LEFT COLUMN-->
       <div class="row">
       <div class="leftcolumn">
       <div class="card">
-      <div class="img"><img src="{{ asset('img/products/' .$product->slug. '.jpg') }}"style="height:400px" alt="product"></div>
-          <div class="price">£{{$product->price}}</div>
-          <button type="button" class="addtocart">Add to Cart</button>
+      <div class="img"><img src="{{ asset('storage/' .$product->image) }}"style="height:400px" alt="product"></div>
+     <!-- <div class="img"><img src="{{ asset('img/products/' .$product->slug. '.jpg') }}"style="height:400px" alt="product"></div> -->
+        <div class="price">£{{$product->price}}</div>
+          <!--<button type="button" class="addtocart">Add to Cart</button>-->
+          <form action="{{ route('checkout.show') }}" method="POST">
+            {{ csrf_field() }}
+            <input type="hidden" name="id" value="{{ $product->id }}">
+            <input type="hidden" name="name" value="{{ $product->name }}">
+            <input type="hidden" name="name" value="{{ $product->slug }}">
+            <input type="hidden" name="price" value="{{ $product->price }}">
+            <button type="submit" class="addtocart">Add to Cart</button>  
+          </form>
          </div><!-- END imageCard -->
 
       

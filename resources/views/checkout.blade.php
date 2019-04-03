@@ -1,5 +1,8 @@
 <!doctype html>
 
+<!-- Stripe Javascript Libary  -->
+<script src="https://js.stripe.com/v3/"></script>
+
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
@@ -26,9 +29,9 @@
                 <li><a href="welcome">home</a></li>
                     <li><a href="{{route('Store.index')}}">Shop</a></li>
                     <li><a href="about">About</a></li>
-                    <li><a href="#">Premium</a></li>
+                    <li><a href="#">Movie Club</a></li>
                     <li><a href="#">Cart</a></li>
-                    <li><a href="login">Login/Register</a></li>
+                    <li><a href="login">Account</a></li>
                 </ul>
                 </ul>
             </div> <!-- end top-nav -->
@@ -101,15 +104,22 @@
 
   <div class="col-25">
     <div class="checkoutcontainer">
-    <div class="heading" style="color:black"><h3>Cart</h3></div>
+    <div class="heading" style="color:black"><h3>Cart: {{ Cart::count() }} item(s) </h3></div>
         
-      </h4>
-      <p><a href="#">Product 1</a> <span class="price">£15</span></p>
-      <p><a href="#">Product 2</a> <span class="price">£5</span></p>
-      <p><a href="#">Product 3</a> <span class="price">£8</span></p>
-      <p><a href="#">Product 4</a> <span class="price">£2</span></p>
+      @foreach(Cart::content() as $item)
+      <p><a href="{{ route('Store.show', $item->model->slug) }}">{{ $item->model->name }} | £{{ $item->model->price }}</a></p>
+      
       <hr>
-      <div class="heading" style="color:black"><h4>Total</h4></div><div class="heading" style="color:black"><h4>£30</h4></div>
+
+      @endforeach
+      <div class="heading" style="color:black"><h4> SubTotal: £{{ Cart::subtotal() }}</h4></div>
+      <div class="heading" style="color:black"><h4>VAT: £{{ Cart::tax() }}</h4></div>
+      <div class="heading" style="color:black"><h4><b>Total: £{{ Cart::total() }}</b></h4></div>
+    
+      <a href="empty" style color:black>Remove item(s)</a>
+    </div>
+
+  
     </div>
   </div>
 </div>

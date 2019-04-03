@@ -14,51 +14,48 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/shop.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/movieclub.css') }}">
         <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
+    <!-- Top Navigation -->
     </head>
     <body>
         <header>
             <div class="top-nav container">
                 <div class="logo">Movies Mobile</div>
                 <ul>
-                   <li><a href="{{route('Home')}}">home</a></li>
+                <li><a href="welcome">home</a></li>
                     <li><a href="{{route('Store.index')}}">Shop</a></li>
                     <li><a href="about">About</a></li>
                     <li><a href="#">Movie Club</a></li>
                     <li><a href="#">Cart</a></li>
                     <li><a href="login">Account</a></li>
                 </ul>
+                </ul>
             </div> <!-- end top-nav -->
-            </header>
-            <div class="top-bar">
-             <form action ="{{ route ( 'search' ) }}" method="GET" class="search">
-                 <i class="fa fa-search search-icon"></i>
-                 <input type="text" name="query" id="query" class="search-box" placeholder="search for product">
-             </form>  
-            </div> <!-- End Top Bar --> 
-            
-            <div class="featured-section">
-            <div class="products text-center">
-                
-                @foreach($products as $product)
-                <div class="product">
-                <a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('storage/' .$product->image) }}" style="height:400px"  alt="product"></a>
-                        
-                        <!-- Old method for calling image(Kept as fallback) -->
-                        <!-- <a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('img/products/' .$product->slug. '.jpg') }}" style="height:400px"  alt="product"></a> -->
-                        
-                        <a href="#"><div class="product-name">{{$product->name}}</div></a>
-                        <div class="product-price">£{{$product->price}}</div>
-                        </div> <!-- end products -->
-                @endforeach
-           
-                </div> <!-- end products -->
-        
+</header>
 
+<!-- Body -->
+<div class="card">
+<div class="pagebody">
+<h6> Movie Club! </h6>
+<p>
 
-            <footer>
+    Movie Club is a Preimum Service provided by Movies Mobile only avalible to Movies Mobile Members!. 
+    
+    With Movie Club members recieve access to:
+
+    > Access to the weekly Newsletter  
+
+    > Exculsive offers and discounts
+
+    > A FREE monthly Movie 
+</P>    
+</div><!-- End Body -->
+</div><!-- End card -->
+
+            <!-- Footer -->
+<footer>
             <div class="footer-content container">
                
                 <ul>
@@ -70,5 +67,7 @@
             </div> <!-- end footer-content -->
         </footer>
 
-    </body>
+</body>
+
 </html>
+

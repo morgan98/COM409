@@ -1,0 +1,40 @@
+.search-result
+{
+  background-color: aqua;
+  padding: 20px;
+  margin-top: 20px;
+  width: 75px;
+  float:center;
+}
+
+.headline
+{
+  width: 100px;
+  background-color: aqua
+}
+
+.top-bar 
+{
+    width: 100; 
+    background-color: grey;
+    
+    padding:2px;
+}
+
+.top-bar input[type=text] {    
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+  }
+
+
+
+.headline  h1
+{
+    width: 100; 
+    background-color: aqua;
+    
+    padding:2px;
+}

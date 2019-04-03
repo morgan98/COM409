@@ -1,0 +1,29 @@
+/* BASIC WEPAGE STYLINGS - The Stylings used to create the basic look of a webpage for the project*/
+* {
+    box-sizing: border-box;
+  }
+
+.card
+ {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+
+.pagebody
+{
+    float: center;
+    width: 75%;
+    text-align: center;
+}
+
+.pagebody h6
+{
+    text-align: center;
+    text-emphasis-style: bold;
+
+}
+
+
+

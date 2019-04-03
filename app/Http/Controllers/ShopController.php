@@ -35,4 +35,19 @@ class ShopController extends Controller
         
     }
 
+    public function search(Request $request)
+    {
+        // Search Validation - A product has to have at least 3 matching characters in order to displayed as a result
+        $request->validate([
+            'query' => 'required|min:3',
+        ]);
+
+        $query = $request->input('query');
+
+        // % wildcard will return results similar to the query
+        $products = Product::where('name', 'like', "%$query%")->get();
+
+        return view ('search-results')-> with('products' , $products);
+    }
+
 }

@@ -17,7 +17,7 @@ class ProductsTableSeeder extends Seeder
             'name' => 'Captain Marvel',
             'slug' => 'captain-marvel',
             'details' => '2019 Film',
-            'price' => 1499,
+            'price' => 14,
             'description' => 'TBA',
             
 
@@ -27,7 +27,7 @@ class ProductsTableSeeder extends Seeder
             'name' => 'Doctor Who: The Macra Terror',
             'slug' => 'dw-macra',
             'details' => '1967 TV Serial',
-            'price' => 1499,
+            'price' => 14,
             'description' => 'TBA',
             
 
@@ -37,7 +37,7 @@ class ProductsTableSeeder extends Seeder
             'name' => 'Doctor Who: Season 18',
             'slug' => 'dw-tbseven',
             'details' => '1980-81 TV Series',
-            'price' => 3499,
+            'price' => 34,
             'description' => 'TBA',
             
 
@@ -47,7 +47,7 @@ class ProductsTableSeeder extends Seeder
             'name' => 'Doctor Who: Series 11',
             'slug' => 'dw-jwone',
             'details' => '2018 TV Series',
-            'price' => 3499,
+            'price' => 34,
             'description' => 'TBA',
             
 
@@ -57,7 +57,7 @@ class ProductsTableSeeder extends Seeder
             'name' => 'Stop making sense',
             'slug' => 'talking-heads',
             'details' => '1984 Film',
-            'price' => 699,
+            'price' => 6,
             'description' => 'TBA',
             
 
@@ -67,7 +67,7 @@ class ProductsTableSeeder extends Seeder
             'name' => 'Alien',
             'slug' => 'alien',
             'details' => '1979 Film',
-            'price' => 399,
+            'price' => 3,
             'description' => 'TBA',
             
 
@@ -77,7 +77,7 @@ class ProductsTableSeeder extends Seeder
             'name' => 'Aliens',
             'slug' => 'aliens',
             'details' => '1986 Film',
-            'price' => 399,
+            'price' => 3,
             'description' => 'TBA',
             
 
@@ -87,7 +87,7 @@ class ProductsTableSeeder extends Seeder
             'name' => 'Spider-Man: Into The Spider-Verse',
             'slug' => 'spider-verse',
             'details' => '2018 Film',
-            'price' => 1499,
+            'price' => 14,
             'description' => 'TBA',
             
 
@@ -95,9 +95,9 @@ class ProductsTableSeeder extends Seeder
 
         Product::create([
             'name' => 'True Stories',
-            'slug' => 'true stories',
+            'slug' => 'true-stories',
             'details' => '1986 Film',
-            'price' => 1899,
+            'price' => 18,
             'description' => 'TBA',
             
 
@@ -107,7 +107,7 @@ class ProductsTableSeeder extends Seeder
             'name' => 'Trainspotting',
             'slug' => 'trainspotting',
             'details' => '1996 Film',
-            'price' => 299,
+            'price' => 2,
             'description' => 'TBA',
             
 

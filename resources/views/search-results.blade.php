@@ -14,7 +14,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/shop.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/search-results.css') }}">
         <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
     </head>
@@ -33,31 +33,34 @@
             </div> <!-- end top-nav -->
             </header>
             <div class="top-bar">
-             <form action ="{{ route ( 'search' ) }}" method="GET" class="search">
+             <form action ="{{ route('search')}}" method="GET" class="search">
                  <i class="fa fa-search search-icon"></i>
                  <input type="text" name="query" id="query" class="search-box" placeholder="search for product">
              </form>  
             </div> <!-- End Top Bar --> 
+
+            <div class="search-results"> 
+            <div class="headline"><h1> Search Results </h1></div>
+            <p>  {{ $products->count() }} for '{{ request()->input('query') }}'  </p>
+           
+            
             
             <div class="featured-section">
             <div class="products text-center">
-                
-                @foreach($products as $product)
-                <div class="product">
-                <a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('storage/' .$product->image) }}" style="height:400px"  alt="product"></a>
-                        
-                        <!-- Old method for calling image(Kept as fallback) -->
-                        <!-- <a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('img/products/' .$product->slug. '.jpg') }}" style="height:400px"  alt="product"></a> -->
-                        
-                        <a href="#"><div class="product-name">{{$product->name}}</div></a>
-                        <div class="product-price">£{{$product->price}}</div>
-                        </div> <!-- end products -->
-                @endforeach
-           
-                </div> <!-- end products -->
         
+            @foreach($products as $product)
+            <div class="product">
+            <a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('storage/' .$product->image) }}" style="height:400px"  alt="product"></a>    
+            <a href="#"><div class="product-name">{{$product->name}}</div></a>
+            <div class="product-price">£{{$product->price}}</div>
+            </div><!-- End Products -->
+            @endforeach
+            
 
+            </div>
+            </div>
 
+            </div> <!-- End Search-results --> 
             <footer>
             <div class="footer-content container">
                

@@ -11,19 +11,23 @@
 |
 */
 
+//Welcome Controller for handling the Products grid
 Route::get('/', 'WelcomePageController@index')->name('landing');
 Route::get('welcome', 'WelcomePageController@index')->name('Home');
 
+//Search Feature Web Route
+Route::get('/search', 'ShopController@search')->name('search');
 
 
+//Basic Web Routes
 Route::get('about', function () {
     return view('about');
 });
 
 
-Route::get('login', function () {
+ Route::get('login', function () {
     return view('login');
-});
+}); 
 
 Route::get('register', function () {
     return view('register');
@@ -41,12 +45,36 @@ Route::get('checkout', function () {
     return view('checkout');
 });
 
+Route::get('movieclub', function () {
+    return view('movieclub');
+});
 
 
+//Shop Web Routes 
 Route::get('shop', 'ShopController@index')->name('Store.index');
 
 Route::get('shop/{product}', 'ShopController@show')->name('Store.show');
 
+//Cart Routes
+Route::get('/checkout', 'CartController@index')->name('checkout.index');
+Route::post('/checkout', 'CartController@store')->name('checkout.show');
+
+
+
+
+//  URL/empty - Destroys items in cart{Used for testing purposes only}
+Route::get('empty', function() {
+    Cart::destroy();
+    return redirect()->route('checkout.index');
+});
+
+
+//Voyager Routes
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+//User Authenication Routes
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
