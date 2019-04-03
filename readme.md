@@ -1,3 +1,5 @@
+
+
 # COM409
 Website Project for Client-Side Application Development 
 
@@ -36,7 +38,5 @@ password: password
 
 NOTES
 
-1. Default user is email: admin@ulster.ac.uk   password: admin
-
-
+1. Default user is email: admin@admin.com   password: admin
 

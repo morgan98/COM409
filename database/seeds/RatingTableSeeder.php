@@ -16,11 +16,11 @@ class RatingTableSeeder extends Seeder
     {
         foreach(App\Product::all() as $product)
         {
-            $customer = App\User::inRandomOrder()->first()->CustomerID;
+            $customer = App\Customer::inRandomOrder()->first()->CustomerID;
             $numEntries = rand(1,2);
             for($i = 0; $i < $numEntries; $i++)
             {
-                $customer2 = App\User::inRandomOrder()->first()->CustomerID;
+                $customer2 = App\Customer::inRandomOrder()->first()->CustomerID;
                 while($customer2 == $customer)
                     {                    
                     $customer2 = App\Product::inRandomOrder()->first()->productID;

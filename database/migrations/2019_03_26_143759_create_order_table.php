@@ -19,7 +19,7 @@ class CreateOrderTable extends Migration
             $table->timestamps();
         });
         Schema::table('orders', function ($table) {
-            $table->foreign('CustomerID')->references('CustomerID')->on('users');
+            $table->foreign('CustomerID')->references('CustomerID')->on('customers');
         });
     }
 

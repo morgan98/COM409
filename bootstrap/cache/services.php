@@ -37,10 +37,11 @@
     33 => 'TCG\\Voyager\\VoyagerServiceProvider',
     34 => 'TCG\\Voyager\\Providers\\VoyagerDummyServiceProvider',
     35 => 'Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider',
-    36 => 'App\\Providers\\AppServiceProvider',
-    37 => 'App\\Providers\\AuthServiceProvider',
-    38 => 'App\\Providers\\EventServiceProvider',
-    39 => 'App\\Providers\\RouteServiceProvider',
+    36 => 'TCG\\Voyager\\VoyagerServiceProvider',
+    37 => 'App\\Providers\\AppServiceProvider',
+    38 => 'App\\Providers\\AuthServiceProvider',
+    39 => 'App\\Providers\\EventServiceProvider',
+    40 => 'App\\Providers\\RouteServiceProvider',
   ),
   'eager' => 
   array (
@@ -66,10 +67,11 @@
     19 => 'TCG\\Voyager\\VoyagerServiceProvider',
     20 => 'TCG\\Voyager\\Providers\\VoyagerDummyServiceProvider',
     21 => 'Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider',
-    22 => 'App\\Providers\\AppServiceProvider',
-    23 => 'App\\Providers\\AuthServiceProvider',
-    24 => 'App\\Providers\\EventServiceProvider',
-    25 => 'App\\Providers\\RouteServiceProvider',
+    22 => 'TCG\\Voyager\\VoyagerServiceProvider',
+    23 => 'App\\Providers\\AppServiceProvider',
+    24 => 'App\\Providers\\AuthServiceProvider',
+    25 => 'App\\Providers\\EventServiceProvider',
+    26 => 'App\\Providers\\RouteServiceProvider',
   ),
   'deferred' => 
   array (

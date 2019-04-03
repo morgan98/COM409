@@ -23,7 +23,7 @@ class CreateRatingTable extends Migration
         Schema::table('ratings',function ($table) {
             $table->unique(array('productID','CustomerID'));
             $table->foreign('productID')->references('productID')->on('products');
-            $table->foreign('CustomerID')->references('CustomerID')->on('users');
+            $table->foreign('CustomerID')->references('CustomerID')->on('customers');
         });
     }
 
