@@ -27,7 +27,7 @@
                     <li><a href="{{route('Store.index')}}">Shop</a></li>
                     <li><a href="about">About</a></li>
                     <li><a href="movieclub">Movie Club</a></li>
-                    <li><a href="#">Cart</a></li>
+                    <li><a href="checkout">Cart</a></li>
                     <li><a href="login">Account</a></li>
                 </ul>
             </div> <!-- end top-nav -->
