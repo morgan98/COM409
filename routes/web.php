@@ -62,7 +62,7 @@ Route::get('shop', 'ShopController@index')->name('Store.index');
 Route::get('shop/{product}', 'ShopController@show')->name('Store.show');
 
 //Cart Routes
-Route::get('/checkout', 'CartController@index')->name('checkout.index');
+Route::get('/checkout', 'CartController@index')->name('checkout.index')->middleware('auth');
 Route::post('/checkout', 'CartController@store')->name('checkout.show');
 
 

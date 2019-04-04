@@ -1,29 +1,38 @@
 /* BASIC WEPAGE STYLINGS - The Stylings used to create the basic look of a webpage for the project*/
 * {
-    box-sizing: border-box;
-  }
-
-.card
- {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
+  box-sizing: border-box;
 }
 
-
-.pagebody
-{
-    float: center;
-    width: 75%;
-    text-align: center;
+.grid {
+font-family: Arial;
+display: grid;
+grid-template-columns: 57% 43%;
+padding: 10px;
 }
 
-.pagebody h6
-{
-    text-align: center;
-    text-emphasis-style: bold;
-
+.grid-item {
+padding: 20px;
 }
 
+.title {
+font-size: 30px;
+}
+
+.body {
+padding-left: 20px;
+}
+
+.showcase {
+background-color: lightgrey;
+padding: 15px;
+text-align: center;
+}
+
+.showcase-img {
+display: block;
+margin-left: auto;
+margin-right: auto;
 
 
+
+}

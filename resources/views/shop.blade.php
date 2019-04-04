@@ -44,10 +44,10 @@
                 
                 @foreach($products as $product)
                 <div class="product">
-                <a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('storage/' .$product->image) }}" style="height:400px"  alt="product"></a>
+                <!-- <a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('storage/' .$product->image) }}" style="height:400px"  alt="product"></a> -->
                         
                         <!-- Old method for calling image(Kept as fallback) -->
-                        <!-- <a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('img/products/' .$product->slug. '.jpg') }}" style="height:400px"  alt="product"></a> -->
+                        <a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('img/products/' .$product->slug. '.jpg') }}" style="height:400px"  alt="product"></a> 
                         
                         <a href="#"><div class="product-name">{{$product->name}}</div></a>
                         <div class="product-price">£{{$product->price}}</div>

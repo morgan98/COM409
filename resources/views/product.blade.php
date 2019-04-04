@@ -44,8 +44,8 @@
       <div class="row">
       <div class="leftcolumn">
       <div class="card">
-      <div class="img"><img src="{{ asset('storage/' .$product->image) }}"style="height:400px" alt="product"></div>
-     <!-- <div class="img"><img src="{{ asset('img/products/' .$product->slug. '.jpg') }}"style="height:400px" alt="product"></div> -->
+      <!--<div class="img"><img src="{{ asset('storage/' .$product->image) }}"style="height:400px" alt="product"></div>-->
+      <div class="img"><img src="{{ asset('img/products/' .$product->slug. '.jpg') }}"style="height:400px" alt="product"></div>
         <div class="price">£{{$product->price}}</div>
           <!--<button type="button" class="addtocart">Add to Cart</button>-->
           <form action="{{ route('checkout.show') }}" method="POST">
@@ -77,7 +77,7 @@
           
           
     
-              
+      
 
             <footer>
             <div class="footer-content container">

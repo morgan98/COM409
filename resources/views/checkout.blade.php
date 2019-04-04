@@ -40,7 +40,8 @@
             <div class="row">
   <div class="col-75">
     <div class="checkoutcontainer">
-      <form action="/action_page.php">
+      <!--payment-form connects form to Stripe Script -->
+      <form action="payment-form">
 
         <div class="row">
           <div class="col-50">
@@ -48,11 +49,11 @@
             <label for="fname" style="color:black"><i class="fa fa-user" style="color:black" ></i> Full Name</label>
             <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
             <label for="email" style="color:black" ><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <input type="text" id="email" name="email" placeholder="Jane@gmail.com">
             <label for="adr" style="color:black" ><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <input type="text" id="adr" name="address" placeholder="12 Botanic Ave">
             <label for="city" style="color:black" ><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="New York">
+            <input type="text" id="city" name="city" placeholder="Belfast">
 
             <div class="row">
               <div class="col-50">
@@ -75,29 +76,26 @@
               
             </div>
             <label for="cname" style="color:black" >Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="Jane Goodmen">
-            <label for="ccnum" style="color:black" >Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="4751 4455 3443 8875">
-            <label for="expmonth" style="color:black">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="September">
-
-            <div class="row">
-              <div class="col-50">
-                <label for="expyear" style="color:black">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2018">
-              </div>
-              <div class="col-50">
-                <label for="cvv" style="color:black">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="420">
-              </div>
+            <input type="text" id="cname" name="cname" placeholder="Jane Goodmen">
+            
+            <div class="form-group">
+            <label for="card-element">
+            Credit or debit card
+            </label>
+            <div id="card-element">
+            <!-- A Stripe Element will be inserted here. -->
             </div>
-          </div>
+            </div>
+
+            <!-- Used to display form errors. -->
+            <div id="card-errors" role="alert"></div>
+            </div>
 
         </div>
         <label>
           <input type="checkbox" style="color:black" checked="checked" name="sameadr"> Shipping address same as billing
         </label>
-        <input type="submit" value="Continue to checkout" class="btn">
+        <input type="submit" value="Pay" class="btn">
       </form>
     </div>
   </div>
@@ -122,10 +120,7 @@
   
     </div>
   </div>
-</div>
-            
-            
-            
+</div> 
             <footer>
             <div class="footer-content container">
                
@@ -139,4 +134,93 @@
         </footer>
 
     </body>
+    <script>
+    
+    (function()
+    {
+      // Create a Stripe client.
+var stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+
+// Create an instance of Elements.
+var elements = stripe.elements();
+
+// Custom styling can be passed to options when creating an Element.
+// (Note that this demo uses a wider set of styles than the guide below.)
+var style = {
+  base: {
+    color: '#32325d',
+    fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+    fontSmoothing: 'antialiased',
+    fontSize: '16px',
+    '::placeholder': {
+      color: '#aab7c4'
+    }
+  },
+  invalid: {
+    color: '#fa755a',
+    iconColor: '#fa755a'
+  }
+};
+
+// Create an instance of the card Element.
+var card = elements.create('card', {
+  style: style,
+  
+  //Hide Postcode field
+  hidePostalCode: true
+  
+  });
+
+// Add an instance of the card Element into the `card-element` <div>.
+card.mount('#card-element');
+
+// Handle real-time validation errors from the card Element.
+card.addEventListener('change', function(event) {
+  var displayError = document.getElementById('card-errors');
+  if (event.error) {
+    displayError.textContent = event.error.message;
+  } else {
+    displayError.textContent = '';
+  }
+});
+
+// Handle form submission.
+var form = document.getElementById('payment-form');
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+ 
+  stripe.createToken(card).then(function(result) {
+    if (result.error) {
+      // Inform the user if there was an error.
+      var errorElement = document.getElementById('card-errors');
+      errorElement.textContent = result.error.message;
+    } else {
+      // Send the token to your server.
+      stripeTokenHandler(result.token);
+    }
+  });
+});
+
+
+  function stripeTokenHandler(token) {
+  // Insert the token ID into the form so it gets submitted to the server
+  var form = document.getElementById('payment-form');
+  var hiddenInput = document.createElement('input');
+  hiddenInput.setAttribute('type', 'hidden');
+  hiddenInput.setAttribute('name', 'stripeToken');
+  hiddenInput.setAttribute('value', token.id);
+  form.appendChild(hiddenInput);
+
+  // Submit the form
+  form.submit();
+}
+
+    })();
+    
+    
+    
+    
+    
+    </script>
 </html>

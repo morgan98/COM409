@@ -1,5 +1,7 @@
 <!doctype html>
 
+<!doctype html>
+
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
@@ -14,6 +16,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/shop.css') }}">
         <link rel="stylesheet" href="{{ asset('css/search-results.css') }}">
         <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
@@ -30,48 +33,51 @@
                     <li><a href="#">Cart</a></li>
                     <li><a href="login">Account</a></li>
                 </ul>
+
             </div> <!-- end top-nav -->
             </header>
+            
             <div class="top-bar">
-             <form action ="{{ route('search')}}" method="GET" class="search">
-                 <i class="fa fa-search search-icon"></i>
-                 <input type="text" name="query" id="query" class="search-box" placeholder="search for product">
-             </form>  
-            </div> <!-- End Top Bar --> 
+                <div class="topbar-grid">
+                    <div class="topbar-grid-item">
+                    <form action ="{{ route('search')}}" method="GET" class="search">
+                        <i class="fa fa-search search-icon"></i>
+                        <input type="text" name="query" id="query" class="search-box" placeholder="search for product">
+                    </form> 
+                    </div>
 
-            <div class="search-results"> 
-            <div class="headline"><h1> Search Results </h1></div>
-            <p>  {{ $products->count() }} for '{{ request()->input('query') }}'  </p>
-           
-            
-            
-            <div class="featured-section">
-            <div class="products text-center">
-        
-            @foreach($products as $product)
-            <div class="product">
-            <a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('storage/' .$product->image) }}" style="height:400px"  alt="product"></a>    
-            <a href="#"><div class="product-name">{{$product->name}}</div></a>
-            <div class="product-price">£{{$product->price}}</div>
-            </div><!-- End Products -->
-            @endforeach
-            
-
+                    <div class="topbar-grid-item">
+                    <h3> {{ $products->count() }} result(s) for the search for for '{{ request()->input('query') }}'</h3>
+                    </div>
+                </div>
             </div>
-            </div>
+            
+                <div class="featured-section">
+                    <div class="products text-center">
+                
+                    @foreach($products as $product)
+                        <div class="product">
+                            <a href="{{route('Store.show',$product->slug)}}">
+                                <div class="img"><img src="{{ asset('img/products/' .$product->slug. '.jpg') }}"style="height:400px" alt="product"></div>
+                            </a>
+                            <a href="{{route('Store.show',$product->slug)}}">
+                                <div class="product-name">{{$product->name}}</div>
+                            </a>
+                            <div class="product-price">£{{$product->price}}</div>
+                        </div> <!-- End Products -->
+                    @endforeach
+                    </div> <!-- End Products text-center -->
+                </div> <!-- End featured-section -->
 
-            </div> <!-- End Search-results --> 
-            <footer>
-            <div class="footer-content container">
-               
-                <ul>
-                    <li>Follow us:</li>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                </ul>
-            </div> <!-- end footer-content -->
+        <footer>
+        <div class="footer-content container">       
+            <ul>
+                <li>Follow us:</li>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+        </div> <!-- end footer-content -->
         </footer>
-
     </body>
 </html>

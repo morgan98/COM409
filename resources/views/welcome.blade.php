@@ -53,9 +53,9 @@
                 
                 @foreach($products as $product)
                 <div class="product">
-                <a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('storage/' .$product->image) }}" style="height:300px"  alt="product"></a>
+                <!--<a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('storage/' .$product->image) }}" style="height:300px"  alt="product"></a>-->
                <!-- Old Method for Calling Image(Kept as fallback) -->
-                <!-- <a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('img/products/' .$product->slug. '.jpg') }}" style="height:300px"  alt="product"></a> -->
+                 <a href="{{route('Store.show',$product->slug)}}"><img src="{{ asset('img/products/' .$product->slug. '.jpg') }}" style="height:300px"  alt="product"></a> 
 
                         <a href="#"><div class="product-name">{{$product->name}}</div></a>
                         <div class="product-price">£{{$product->price}}</div>
@@ -72,31 +72,7 @@
 
         </div> <!-- end featured-section -->
 
-        <div class="blog-section">
-            <div class="container">
-                <h1 class="text-center">Members get more...</h1>
-
-                <p class="section-description text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et sed accusantium maxime dolore cum provident itaque ea, a architecto alias quod reiciendis ex ullam id, soluta deleniti eaque neque perferendis.</p>
-
-                <div class="blog-posts">
-                    <div class="blog-post" id="blog1">
-                        <a href="#"><img src="img/streaming.jpg" alt="blog image"></a>
-                        <a href="#"><h2 class="blog-title">Blog Post Title 1</h2></a>
-                        <div class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est ullam, ipsa quasi?</div>
-                    </div>
-                    <div class="blog-post" id="blog2">
-                        <a href="#"><img src="img/pound.png" alt="blog image"></a>
-                        <a href="#"><h2 class="blog-title">Blog Post Title 2</h2></a>
-                        <div class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est ullam, ipsa quasi?</div>
-                    </div>
-                    <div class="blog-post" id="blog3">
-                        <a href="#"><img src="img/delivery.jpg" alt="blog image"></a>
-                        <a href="#"><h2 class="blog-title">Blog Post Title 3</h2></a>
-                        <div class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est ullam, ipsa quasi?</div>
-                    </div>
-                </div> <!-- end blog-posts -->
-            </div> <!-- end container -->
-        </div> <!-- end blog-section -->
+      
 
         <footer>
             <div class="footer-content container">

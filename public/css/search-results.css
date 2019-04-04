@@ -1,40 +1,30 @@
-.search-result
-{
-  background-color: aqua;
+/* .search-result {
+  background-color: white;
   padding: 20px;
   margin-top: 20px;
   width: 75px;
   float:center;
+} */
+
+.topbar-grid {
+  font-family: Arial;
+  float:center;
+  display: grid;
+  grid-template-columns: 20% 40%;
 }
 
-.headline
-{
-  width: 100px;
-  background-color: aqua
+.topbar-grid-item {
+  padding: 10px;
 }
 
-.top-bar 
-{
-    width: 100; 
-    background-color: grey;
-    
-    padding:2px;
-}
-
-.top-bar input[type=text] {    
-    padding: 6px;
-    border: none;
-    margin-top: 8px;
-    margin-right: 16px;
-    font-size: 17px;
-  }
-
-
-
-.headline  h1
-{
-    width: 100; 
-    background-color: aqua;
-    
-    padding:2px;
-}
+/* 
+.headline {
+  width: 75px;
+  float: center;
+  background-color: aqua;
+} */
+/* 
+.search-result h1 {
+  text-align: center;
+  text-size-adjust: 5px;
+} */
